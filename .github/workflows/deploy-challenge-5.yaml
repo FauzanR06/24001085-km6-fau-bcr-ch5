@@ -18,14 +18,6 @@ jobs:
           SECRETS="${{ secrets.CHALLENGE_5_GCP_ENV }}"
           echo "$SECRETS" | tr ';' '\n' >> .env
 
-      - name: Install dependencies
-        # working-directory: ./chapter-5/topic-1
-        run: npm install
-
-      - name: Migrate the new database
-        # working-directory: ./chapter-5/topic-1
-        run: npx sequelize db:migrate
-
       - id: "auth"
         uses: "google-github-actions/auth@v2"
         with:
