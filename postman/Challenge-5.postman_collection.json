@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "e6ade195-69f8-4eb5-9bf5-258e4b9db378",
+		"name": "Challenge-5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14364339"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "asep",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "asep@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fauzan Ramdhani/Pictures/Screenshots/Screenshot 2023-04-05 130254.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/auth/register",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ucup@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/auth/login",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL\n}}/api/auth/profile",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Get All Car",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL\n}}/api/car",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/car/1",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"car",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tesla",
+									"type": "text"
+								},
+								{
+									"key": "rentPerDay",
+									"value": "200000",
+									"type": "text"
+								},
+								{
+									"key": "cartype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fauzan Ramdhani/Pictures/asset/Cover.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/car",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ferrari",
+									"type": "text"
+								},
+								{
+									"key": "rentPerDay",
+									"value": "250000",
+									"type": "text"
+								},
+								{
+									"key": "cartype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fauzan Ramdhani/Pictures/asset/Cover.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/car/1",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"car",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/car/4",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"car",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartype",
+			"item": [
+				{
+					"name": "Get All cartype",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/cartype",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cartype",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/cartype/1",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"cartype",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create cartype",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Tank\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/cartype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cartype",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"LCGC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/cartype/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cartype",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/cartype/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manufacture",
+			"item": [
+				{
+					"name": "Get All manufacture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/manufacture",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"manufacture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get manufacture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL\n}}/api/manufacture/1",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"manufacture",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create manufacture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Honda\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/manufacture",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"manufacture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update manufacture",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Nissan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL\n}}/api/manufacture/3",
+							"host": [
+								"{{URL\n}}"
+							],
+							"path": [
+								"api",
+								"manufacture",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete manufacture",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/manufacture/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"manufacture",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "npx nodemon index",
-    "start": "npx sequelize db::migrate && node index.js"
+    "start": "npx sequelize db:migrate && node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
