@@ -8,7 +8,12 @@ const app = express();
 const port = 4000;
 
 app.use(express.json());
-app.use(fileUpload({ useTempFiles: true }));
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: process.env.NODE_ENV == "development" ? "./tmp" : "/tmp",
+  })
+);
 app.use(express.static("public"));
 
 app.use("/api", router);
