@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "d7d27543-2f38-4673-b33c-a229880aa087",
+		"name": "Challenge-4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14364339"
+	},
+	"item": [
+		{
+			"name": "cartype",
+			"item": [
+				{
+					"name": "Get All cartype",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/cartype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cartype",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/cartype/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create cartype",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Kodok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/cartype",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cartype",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"LCGC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/cartype/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cartype",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/cartype/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"cartype",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Get All Car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/car/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"car",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tesla",
+									"type": "text"
+								},
+								{
+									"key": "rentPerDay",
+									"value": "200000",
+									"type": "text"
+								},
+								{
+									"key": "cartype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fauzan Ramdhani/Pictures/asset/Cover.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ferrari",
+									"type": "text"
+								},
+								{
+									"key": "rentPerDay",
+									"value": "250000",
+									"type": "text"
+								},
+								{
+									"key": "cartype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fauzan Ramdhani/Pictures/asset/Cover.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/car/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"car",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/car/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"car",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
