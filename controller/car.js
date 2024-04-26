@@ -36,7 +36,7 @@ exports.getCar = async (req, res, next) => {
 exports.createCar = async (req, res, next) => {
   try {
     const { name, rentPerDay, cartype_id } = req.body;
-    const { photo } = req.files; // get photo file
+    const photo = req?.files?.photo; // get photo file
     if (!name || name == "") {
       return next({
         message: "Name must be provided!",
