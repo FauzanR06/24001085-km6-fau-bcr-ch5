@@ -8,6 +8,8 @@ const {
 } = require("../controller/auth");
 const { authMiddleware } = require("../middleware/auth");
 
+router.post("/registerAdmin", registerAdmin);
+
 router.post("/register", register);
 router.post("/login", login);
 router.get("/profile", authMiddleware(["user", "admin"]), profile);
