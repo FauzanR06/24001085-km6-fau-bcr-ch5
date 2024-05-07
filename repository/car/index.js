@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const path = require("path");
-const { cartype, car } = require("../../models");
+const { cartype, car, manufacture } = require("../../models");
 const { uploader } = require("../../helper/cloudinary");
 const { getData, setData, deleteData } = require("../../helper/redis");
 
@@ -8,6 +8,7 @@ exports.getCars = async () => {
   const data = await car.findAll({
     include: {
       model: cartype,
+      manufacture,
     },
   });
   return data;
@@ -29,6 +30,7 @@ exports.getCar = async (id) => {
     },
     include: {
       model: cartype,
+      manufacture,
     },
   });
   if (data.length > 0) {
@@ -99,6 +101,7 @@ exports.updateCar = async (id, payload) => {
     },
     include: {
       model: cartype,
+      manufacture,
     },
   });
   if (data.length > 0) {
