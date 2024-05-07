@@ -6,10 +6,7 @@ const { getData, setData, deleteData } = require("../../helper/redis");
 
 exports.getCars = async () => {
   const data = await car.findAll({
-    include: {
-      model: cartype,
-      model: manufacture,
-    },
+    include: [{ model: cartype }, { model: manufacture }],
   });
   return data;
 };
@@ -28,10 +25,7 @@ exports.getCar = async (id) => {
     where: {
       id,
     },
-    include: {
-      model: cartype,
-      model: manufacture,
-    },
+    include: [{ model: cartype }, { model: manufacture }],
   });
   if (data.length > 0) {
     // save to redis
@@ -99,10 +93,7 @@ exports.updateCar = async (id, payload) => {
     where: {
       id,
     },
-    include: {
-      model: cartype,
-      model: manufacture,
-    },
+    include: [{ model: cartype }, { model: manufacture }],
   });
   if (data.length > 0) {
     // save to redis
