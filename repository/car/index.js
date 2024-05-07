@@ -8,7 +8,7 @@ exports.getCars = async () => {
   const data = await car.findAll({
     include: {
       model: cartype,
-      manufacture,
+      model: manufacture,
     },
   });
   return data;
@@ -30,7 +30,7 @@ exports.getCar = async (id) => {
     },
     include: {
       model: cartype,
-      manufacture,
+      model: manufacture,
     },
   });
   if (data.length > 0) {
@@ -101,7 +101,7 @@ exports.updateCar = async (id, payload) => {
     },
     include: {
       model: cartype,
-      manufacture,
+      model: manufacture,
     },
   });
   if (data.length > 0) {
