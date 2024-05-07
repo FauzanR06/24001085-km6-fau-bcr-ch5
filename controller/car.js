@@ -83,6 +83,7 @@ exports.updateCar = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, rentPerDay, cartype_id, manufacture_id } = req.body;
+    const photo = req?.files?.photo;
     if (!name || name == "") {
       return next({
         message: "Name must be provided!",
